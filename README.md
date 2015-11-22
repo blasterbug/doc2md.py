@@ -14,9 +14,9 @@ may be different on different converters.
 
 ## Usage
 
-    $ python pydocmd.py module [...]
+    $ python doc2md.py module [...]
 
-pydocmd scan every python files (.py) given and generate the documentation in
+doc2md.py scan every python files (.py) given and generate the documentation in
 a subfolder `doc`
 
 ## Example output

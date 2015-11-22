@@ -20,7 +20,7 @@ may be different on different converters.
 
  - http://github.com/blasterbug/SmileANN/wiki/neuron
  - http://github.com/blasterbug/SmileANN/wiki/faces
- - http://github.com/blasterbug/pydocmd/wiki/pydocmd
+ - http://github.com/blasterbug/pydocmd/doc2md.py/doc2md.py
  
 """
 
