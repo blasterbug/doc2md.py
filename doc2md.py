@@ -15,12 +15,14 @@ may be different on different converters.
 
     $ python doc2md.py module [...]
 
+doc2md.py scans every python file (.py) given and generates the documentation
+in a subfolder `doc`.  
 
 ## Example output
 
  - http://github.com/blasterbug/SmileANN/wiki/neuron
  - http://github.com/blasterbug/SmileANN/wiki/faces
- - http://github.com/blasterbug/pydocmd/doc2md.py/doc2md.py
+ - http://github.com/blasterbug/doc2md.py/wiki/doc2md
  
 """
 
