@@ -1,4 +1,4 @@
-# doc2md.py
+# doc2md.py [![Build Status](https://travis-ci.org/blasterbug/doc2md.py.svg)](https://travis-ci.org/blasterbug/doc2md.py)
 
 pydocmd generates Python documentation in the Markdown (md) format. It was
 written to automatically generate documentation that can be put on Github 
