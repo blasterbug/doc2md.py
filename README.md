@@ -26,4 +26,4 @@ a subfolder `doc`
  - [blasterbug/pydocmd/wiki/pydocmd](http://github.com/blasterbug/pydocmd/wiki/pydocmd)
 
 
-[pydocmd](https://github.com/fboender/pydocmd)
+[pydocmd]: https://github.com/fboender/pydocmd
