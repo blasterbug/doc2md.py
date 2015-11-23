@@ -11,3 +11,4 @@ python:
   - "3.4"
   - "3.5"
 script: python doc2md.py doc2md.py
+after_success: cat  doc/doc2md.md
