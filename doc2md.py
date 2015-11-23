@@ -40,6 +40,10 @@ __maintainer__ = "Benjamin Sientzoff (blasterbug)"
 __license__ = "GNU GPL V2"
 
 def remove_extension( fl ):
+    """
+    Remove extention from the program file name
+    """
+    # does not handle mutiple dots
     return str(fl).split('.')[0]
 
 def fmt_doc(doc, indent=''):
