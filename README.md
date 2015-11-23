@@ -11,7 +11,7 @@ may be different on different converters.
 
 * __Author__: blasterbug
 * __Version__: 0.2b
-* __License__: MIT (expat) License
+* __License__: GNU GPL V2
 
 ## Usage
 
