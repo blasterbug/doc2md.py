@@ -22,9 +22,9 @@ in a subfolder `doc`.
 
 ## Example output
 
+ - [blasterbug/pydocmd/wiki/doc2md.py](https://github.com/blasterbug/doc2md.py/wiki)
  - [blasterbug/SmileANN/wiki/neuron](http://github.com/blasterbug/SmileANN/wiki/neuron)
  - [blasterbug/SmileANN/wiki/faces](http://github.com/blasterbug/SmileANN/wiki/faces)
- - [blasterbug/pydocmd/wiki/doc2md.py](https://github.com/blasterbug/doc2md.py/wiki)
  - [blasterbug/PythonYard/wiki/leet](https://github.com/blasterbug/PythonYard/wiki/leet)
 
 
