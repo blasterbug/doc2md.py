@@ -3,8 +3,8 @@
 
 """
 doc2md.py generates Python documentation in the Markdown (md) format. It was
-written to automatically generate documentation that can be put on Github 
-or Bitbucket wiki pages. It is initially based on Ferry Boender's pydocmd.  
+written to automatically generate documentation that can be put on Github
+or Bitbucket wiki pages. It is initially based on Ferry Boender's pydocmd.
 
 It is as of yet not very complete and is more of a Proof-of-concept than a
 fully-fledged tool. Markdown is also a very restricted format and every
@@ -16,14 +16,14 @@ may be different on different converters.
     $ python doc2md.py module [...]
 
 doc2md.py scans every python file (.py) given and generates the documentation
-in a subfolder `doc`.  
+in a subfolder `doc`.
 
 ## Example output
 
+ - http://github.com/blasterbug/doc2md.py/wiki/doc2md
  - http://github.com/blasterbug/SmileANN/wiki/neuron
  - http://github.com/blasterbug/SmileANN/wiki/faces
- - http://github.com/blasterbug/doc2md.py/wiki/doc2md
- 
+
 """
 
 
@@ -35,7 +35,7 @@ import inspect
 
 
 __author__ = "Benjamin Sientzoff"
-__version__ = "0.1b"
+__version__ = "0.1.2b"
 __maintainer__ = "Benjamin Sientzoff (blasterbug)"
 __license__ = "GNU GPL V2"
 
@@ -109,7 +109,7 @@ def insp_mod(mod_name, mod_inst):
         for func_name, func_inst in functions:
             if func_inst.__module__ == mod_name :
                 info['functions'].append(insp_method(func_name, func_inst))
-            
+
     # Get module classes
     classes = inspect.getmembers(mod_inst, inspect.isclass)
     if classes:
@@ -165,7 +165,7 @@ def insp_method(method_name, method_inst):
         for pos, default in enumerate(method_args.defaults):
             info['args'][a_pos + pos] = '%s=%s' % (info['args'][a_pos + pos], default)
 
-    # Print method documentation 
+    # Print method documentation
     method_doc = inspect.getdoc(method_inst)
     if method_doc:
         info['doc'] = fmt_doc(method_doc)
@@ -175,6 +175,8 @@ def insp_method(method_name, method_inst):
 def to_markdown( text_block ) :
     """
     Markdownify an inspect file
+    :param text_block: inspect file to turn to Markdown
+    :return: Markdown doc into a string
     """
     doc_output = ("# %s  \n" % file_i['name'] )
     doc_output += file_i['doc'] + '  \n'
@@ -184,7 +186,7 @@ def to_markdown( text_block ) :
     if 'email' in file_i['author']:
         author += '<%s>' % (file_i['author']['email'])
     if author:
-        doc_output += str(" - __Author__: %s\n" % author )
+        doc_output += str("\n __Author__: %s  \n" % author )
 
     author_attrs = [
         ('Version', 'version'),
@@ -193,7 +195,7 @@ def to_markdown( text_block ) :
     ]
     for attr_friendly, attr_name in author_attrs:
         if attr_name in file_i['author']:
-            doc_output += " - __%s__: %s \n" % (attr_friendly, file_i['author'][attr_name])
+            doc_output += " __%s__: %s  \n" % (attr_friendly, file_i['author'][attr_name])
 
     if file_i['vars']:
         doc_output += "\n## Variables\n"
@@ -205,7 +207,7 @@ def to_markdown( text_block ) :
         for function_i in file_i['functions']:
             if function_i['name'].startswith('_'):
                 continue
-            doc_output += "\n\n### def `%s(%s)`\n" % (function_i['name'], ', '.join(function_i['args']))
+            doc_output += "\n\n### `%s(%s)`\n" % (function_i['name'], ', '.join(function_i['args']))
             if function_i['doc']:
                 doc_output += "%s" % (function_i['doc'])
             else:
@@ -244,5 +246,3 @@ if __name__ == '__main__':
     else:
         sys.stderr.write('Usage: %s <file.py>\n' % (sys.argv[0]))
         sys.exit(1)
-
-
